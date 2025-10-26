@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Pax Printer </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Pax Printer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <input
+      type="file"
+      id="fileInput"
+      hidden
+      (change)="handleFileSelect($event)"
+    />
+    <ion-button
+      (click)="printLogo()"
+      expand="block"
+      size="large"
+      style="margin-bottom: 25px"
+      >Print Logo
+      <ion-icon name="logo-ionic" slot="start"></ion-icon>
+    </ion-button>
+
+    <ion-button
+      (click)="clickFile()"
+      expand="block"
+      size="large"
+      style="margin-bottom: 25px"
+      >Print File
+      <ion-icon name="image-sharp" slot="start"></ion-icon>
+    </ion-button>
+
+    <ion-button
+      (click)="printDrawing()"
+      expand="block"
+      size="large"
+      style="margin-bottom: 25px"
+    >
+      <ion-icon name="create-sharp" slot="start"></ion-icon>
+      Print Drawing</ion-button
+    >
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="small">
+      {{ printerFound ? 'Printer Found' : 'Printer Not Found' }}
+    </ion-title>
+    <ion-button
+      slot="end"
+      (click)="searchPrinter()"
+      shape="round"
+      style="margin-right: 15px"
+    >
+      <ion-icon name="refresh" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
