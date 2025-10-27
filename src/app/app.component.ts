@@ -2,7 +2,13 @@ import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { refresh, createSharp, logoIonic, imageSharp } from 'ionicons/icons';
+import {
+  refresh,
+  createSharp,
+  logoIonic,
+  imageSharp,
+  settingsSharp,
+} from 'ionicons/icons';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -10,6 +16,6 @@ import { refresh, createSharp, logoIonic, imageSharp } from 'ionicons/icons';
 })
 export class AppComponent {
   constructor() {
-    addIcons({ refresh, createSharp, logoIonic, imageSharp });
+    addIcons({ refresh, createSharp, logoIonic, imageSharp, settingsSharp });
   }
 }

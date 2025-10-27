@@ -10,10 +10,12 @@ import {
   IonIcon,
   ActionSheetController,
   LoadingController,
+  IonLabel,
 } from '@ionic/angular/standalone';
 import { PrinterProvider } from '../providers/printer';
 import { BluetoothSerial } from '@awesome-cordova-plugins/bluetooth-serial/ngx';
 import { DrawingPadModalComponent } from '../modals/drawing-pad-modal/drawing-pad-modal.component';
+import IntentPlugin from '../IntentPlugin';
 
 @Component({
   selector: 'app-home',
@@ -28,11 +30,13 @@ import { DrawingPadModalComponent } from '../modals/drawing-pad-modal/drawing-pa
     IonButton,
     IonFooter,
     IonIcon,
+    IonLabel,
   ],
 })
 export class HomePage {
   public printerFound: boolean = false;
   loading?: any;
+  grayRange: number = 100;
   constructor(
     private printerProvider: PrinterProvider,
     private modalCtrl: ModalController,
@@ -69,6 +73,12 @@ export class HomePage {
       await this.loading.dismiss();
       this.loading = null;
     }
+  }
+
+  openPrinterSettings() {
+    IntentPlugin.startActivity({
+      intent: 'android.setting.BLUETOOTH_PRINTER_FONT_SETTING',
+    });
   }
 
   loadingWrapper = async (action: () => Promise<void>) => {

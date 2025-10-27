@@ -23,7 +23,8 @@
       expand="block"
       size="large"
       style="margin-bottom: 25px"
-      >Print Logo
+    >
+      <ion-label style="width: 100%"> Print Logo</ion-label>
       <ion-icon name="logo-ionic" slot="start"></ion-icon>
     </ion-button>
 
@@ -32,7 +33,8 @@
       expand="block"
       size="large"
       style="margin-bottom: 25px"
-      >Print File
+    >
+      <ion-label style="width: 100%"> Print File </ion-label>
       <ion-icon name="image-sharp" slot="start"></ion-icon>
     </ion-button>
 
@@ -43,8 +45,17 @@
       style="margin-bottom: 25px"
     >
       <ion-icon name="create-sharp" slot="start"></ion-icon>
-      Print Drawing</ion-button
+      <ion-label style="width: 100%">Print Drawing</ion-label>
+    </ion-button>
+    <ion-button
+      (click)="openPrinterSettings()"
+      expand="block"
+      size="large"
+      style="margin-bottom: 25px"
     >
+      <ion-icon name="settings-sharp" slot="start"></ion-icon>
+      <ion-label style="width: 100%"> Printer Settings </ion-label>
+    </ion-button>
   </div>
 </ion-content>
 <ion-footer>
